@@ -1,5 +1,8 @@
 # React Typewriter Effect
 
+[![npm version](https://img.shields.io/npm/v/@westttttttt/react-typewriter.svg?style=flat)](https://www.npmjs.com/package/@westttttttt/react-typewriter)
+[![npm downloads](https://img.shields.io/npm/dm/@westttttttt/react-typewriter.svg?style=flat)](https://www.npmjs.com/package/@westttttttt/react-typewriter)
+
 A simple and customizable React typewriter effect component with TypeScript support.
 
 ![NPM Version](https://img.shields.io/npm/v/@westttttttt/react-typewriter)
