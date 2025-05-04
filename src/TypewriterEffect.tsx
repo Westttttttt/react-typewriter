@@ -1,51 +1,52 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from 'react';
 
 export interface TypewriterEffectProps {
-   text: string;
-   speed?: number;
-   delay?: number;
-   onComplete?: () => void;
-   className?: string;
+  text: string;
+  speed?: number;
+  delay?: number;
+  onComplete?: () => void;
+  className?: string;
 }
 
 export const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
-   text,
-   speed = 100,
-   delay = 0,
-   onComplete,
-   className,
+  text,
+  speed = 100,
+  delay = 0,
+  onComplete,
+  className,
 }) => {
-   const [displayText, setDisplayText] = useState("");
-   const [currentIndex, setCurrentIndex] = useState(0);
+  const [displayText, setDisplayText] = useState('');
 
-   useEffect(() => {
-      if (delay > 0) {
-         const delayTimeout = setTimeout(() => {
-            startTyping();
-         }, delay);
+  useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout>;
+    
+    // Reset the text when component mounts or text changes
+    setDisplayText('');
+    
+    // Start typing after the initial delay
+    timeoutId = setTimeout(() => {
+      let currentIndex = 0;
+      
+      const typeText = () => {
+        if (currentIndex < text.length) {
+          setDisplayText(text.substring(0, currentIndex + 1));
+          currentIndex += 1;
+          timeoutId = setTimeout(typeText, speed);
+        } else {
+          onComplete?.();
+        }
+      };
+      
+      typeText();
+    }, delay);
 
-         return () => clearTimeout(delayTimeout);
-      } else {
-         startTyping();
-      }
-   }, []);
+    // Cleanup function
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [text, speed, delay, onComplete]);
 
-   const startTyping = () => {
-      if (currentIndex < text.length) {
-         const timeout = setTimeout(() => {
-            setDisplayText((prev) => prev + text[currentIndex]);
-            setCurrentIndex((prev) => prev + 1);
-         }, speed);
-
-         return () => clearTimeout(timeout);
-      } else if (onComplete) {
-         onComplete();
-      }
-   };
-
-   useEffect(() => {
-      startTyping();
-   }, [currentIndex]);
-
-   return <span className={className}>{displayText}</span>;
+  return <span className={className}>{displayText}</span>;
 };
+
+export default TypewriterEffect;
