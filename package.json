@@ -1,6 +1,6 @@
 {
    "name": "@westttttttt/react-typewriter",
-   "version": "1.0.2",
+   "version": "1.0.3",
    "main": "dist/index.js",
    "type": "module",
    "module": "dist/index.esm.js",
@@ -19,7 +19,7 @@
       "effect"
    ],
    "peerDependencies": {
-      "react": "^18.2.0"
+      "react": "^18.2.0 || ^19.0.0"
    },
    "author": "Westttttttt",
    "license": "MIT",
@@ -30,10 +30,10 @@
       "@rollup/plugin-typescript": "^12.1.2",
       "@testing-library/jest-dom": "^6.6.3",
       "@testing-library/react": "^14.0.0",
-      "@types/react": "^18.2.0",
+      "@types/react": "^19.0.0",
       "jest": "^29.7.0",
-      "react": "^18.2.0",
-      "react-dom": "^18.2.0",
+      "react": "^19.0.0",
+      "react-dom": "^19.0.0",
       "rollup": "^4.40.1",
       "rollup-plugin-dts": "^6.2.1",
       "tslib": "^2.8.1",
