@@ -142,6 +142,14 @@ MIT © [Westttttttt](https://github.com/Westttttttt)
 If you have any questions or need help, please open an issue on [GitHub](https://github.com/Westttttttt/react-typewriter-effect/issues).
 
 ## Changelog
+## Changelog
+
+### 1.0.2 (2025-05-04)
+- Fix: Correct typewriter effect character rendering
+- Fix: Resolve timing issues with text display
+
+### 1.0.1 (2025-05-04)
+- Initial release
 
 ### 1.0.0 (2025-05-04)
 - Initial release
