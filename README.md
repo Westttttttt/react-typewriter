@@ -148,6 +148,9 @@ If you have any questions or need help, please open an issue on [GitHub](https:/
 ## Changelog
 
 ### 1.0.2 (2025-05-04)
+- Fix: Correct typewriter effect character rendering issue
+
+### 1.0.2 (2025-05-04)
 - Fix: Correct typewriter effect character rendering
 - Fix: Resolve timing issues with text display
 
